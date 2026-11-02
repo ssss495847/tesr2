@@ -1,0 +1,55 @@
+<!doctype html><html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>羽球選物指南</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f4ea;color:#18372d;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans TC',sans-serif}header{display:flex;justify-content:space-between;align-items:center;padding:24px 7%;border-bottom:1px solid #cbd4c5;font-weight:800}nav a{color:inherit;margin-left:24px;text-decoration:none;font-size:14px}.hero{padding:90px 7% 75px;background:#173d30;color:#f5f5df;position:relative;overflow:hidden}.hero:after{content:'✳';position:absolute;right:9%;top:0;font-size:300px;color:#c4ee6c;opacity:.75}small,.eyebrow{letter-spacing:.17em;font-weight:800;font-size:12px}h1{font-size:clamp(42px,7vw,86px);line-height:1.08;margin:25px 0;max-width:700px}h1 em{color:#c4ee6c;font-style:normal}.hero p{font-size:18px;line-height:1.8;max-width:570px;color:#d4dfd4}.btn{display:inline-block;background:#c4ee6c;color:#173d30;padding:16px 24px;border-radius:4px;text-decoration:none;font-weight:800;margin-top:20px}main{padding:70px 7%}h2{font-size:36px;margin:12px 0}.intro{display:flex;justify-content:space-between;align-items:end;gap:20px}.intro p{max-width:420px;line-height:1.7;color:#63776b}.filters{display:flex;gap:10px;flex-wrap:wrap;margin:35px 0}button{border:1px solid #aabbb0;background:transparent;color:#26473a;border-radius:30px;padding:11px 20px;cursor:pointer;font-weight:700}button.active{background:#183e30;color:white;border-color:#183e30}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #e0e6dc;padding:28px;min-height:240px;display:flex;flex-direction:column}.num{color:#81968a;font-size:12px}.card h3{font-size:26px;margin:28px 0 8px}.card p{line-height:1.7;color:#5e7267;flex:1}.tag{font-size:12px;color:#446b50;font-weight:800}.guide{margin-top:80px;background:#dceacb;padding:45px;display:grid;grid-template-columns:1fr 2fr;gap:30px}.guide p{line-height:1.8}footer{padding:30px 7%;border-top:1px solid #cbd4c5;color:#697d70;font-size:13px}@media(max-width:700px){.hero:after{font-size:150px;right:-10px;top:20px;opacity:.25}.grid{grid-template-columns:1fr}.guide{grid-template-columns:1fr}.intro{display:block}nav a{margin-left:12px}.hero{padding-top:65px}}
+</style><header><span>✳ 羽球選物指南</span><nav><a href="#brands">品牌探索</a><a href="#guide">選購建議</a></nav></header><section class="hero"><span class="eyebrow">FIND YOUR GAME · 找到你的節奏</span><h1>每一次揮拍，<br><em>都更靠近熱愛。</em></h1><p>從第一支球拍到下一次突破，用更簡單的方式認識羽球品牌，找到適合自己的球場夥伴。</p><a class="btn" href="#brands">探索品牌 →</a></section><main><section id="brands"><div class="intro"><div><span class="eyebrow">THE BRAND GUIDE / 01</span><h2>找到適合你的品牌</h2></div><p>每個品牌都有不同系列。先從你的程度出發，再依打法與預算比較實際規格。</p></div><div class="filters" role="group" aria-label="依程度篩選"><button class="active" data-level="all">全部品牌</button><button data-level="beginner">初學入門</button><button data-level="intermediate">進階球友</button><button data-level="advanced">競技高手</button></div><div class="grid" id="cards"></div></section><section class="guide" id="guide"><div><span class="eyebrow">BEFORE YOU PLAY / 02</span><h2>挑拍，先認識自己。</h2></div><div><p><strong>01 / 初學者：</strong>優先試握手感舒適、容易揮動的球拍；鞋子則以合腳與止滑為先。</p><p><strong>02 / 進階球友：</strong>依單打或雙打習慣，試試不同重量、平衡點與中桿軟硬。</p><p><strong>03 / 競技球友：</strong>依揮拍速度與戰術需求比較規格，並搭配熟悉的球線與磅數。</p><p>選購前建議實際試握，並向專業店家確認型號、規格與保固。</p></div></section></main><footer>羽球選物指南 · 為每一位熱愛上場的人而設計</footer><script>const data=[['YONEX','日本品牌，產品線廣泛，球拍、球鞋與球線選擇豐富。','beginner intermediate advanced','入門到競技'],['VICTOR 勝利','台灣羽球品牌，提供多樣球拍與鞋款，適合比較不同打法需求。','beginner intermediate advanced','入門到競技'],['LI-NING 李寧','羽球產品涵蓋多種系列，可依操控、速度與進攻需求探索。','beginner intermediate advanced','入門到競技'],['MIZUNO 美津濃','除了球拍，也可留意其羽球鞋款；選鞋時記得親自試穿。','beginner intermediate advanced','入門到競技'],['KIZUNA','提供羽球線及球拍等用品，可依手感與打法比較不同系列。','beginner intermediate advanced','入門到競技']];const grid=document.querySelector('#cards');function render(level){grid.innerHTML=data.filter(x=>level==='all'||x[2].includes(level)).map((x,i)=>`<article class="card"><span class="num">0${i+1} / BRAND</span><h3>${x[0]}</h3><p>${x[1]}</p><span class="tag">✳ ${x[3]}</span></article>`).join('')}document.querySelectorAll('button[data-level]').forEach(b=>b.onclick=()=>{document.querySelectorAll('button[data-level]').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(b.dataset.level)});render('all');</script></html>
+<style>.series{margin-top:70px}.series details{background:white;border:1px solid #dce4d9;margin:10px 0;padding:20px 24px}.series summary{font-size:19px;font-weight:800;cursor:pointer}.series p{color:#586f62;line-height:1.8}.series a{color:#28563c}.note{font-size:14px;color:#65786c}</style><script>
+document.title='羽球拍選物指南';document.querySelector('header span').textContent='✳ 羽球拍選物指南';document.querySelector('.hero p').textContent='從第一支球拍到下一次突破，認識各品牌球拍系列，依打法與手感找到適合自己的球場夥伴。';
+const section=document.createElement('section');section.className='series';section.innerHTML=`<span class="eyebrow">RACKET COLLECTION / 02</span><h2>認識各品牌球拍系列</h2><p class="note">以下為代表性系列或型號，並非完整產品目錄；各地上市與供貨可能不同。同系列的重量、平衡點和中桿硬度也會因型號而異。</p>
+<details open><summary>YONEX</summary><p><strong>ASTROX</strong>｜偏向進攻與力量。<br><strong>NANOFLARE</strong>｜主打速度與快速揮拍。<br><strong>ARCSABER</strong>｜著重控球與精準度。<br><strong>DUORA、ISOMETRIC、MUSCLE POWER、B-Series</strong>｜其他可比較的系列。</p></details>
+<details><summary>VICTOR 勝利</summary><p><strong>THRUSTER 突擊</strong>｜可從攻擊取向的球拍開始探索。<br><strong>AURASPEED 極速</strong>｜偏向快速攻防。<br><strong>DRIVE X</strong>｜可比較全方位打法的型號。</p></details>
+<details><summary>LI-NING 李寧</summary><p><strong>BladeX</strong>｜以靈活移動與速度為方向。<br><strong>Tectonic</strong>｜可比較不同進攻型號。<br><strong>Windstorm</strong>｜可探索輕量、快速揮拍的選擇。</p></details>
+<details><summary>MIZUNO 美津濃</summary><p><strong>FORTIUS</strong>｜力量取向。<br><strong>ALTIUS</strong>｜控制取向。<br><strong>ACROSPEED</strong>｜速度取向。</p></details>
+<details><summary>KIZUNA</summary><p><strong>Z187 POWER、Z183 BALANCE</strong>｜分別可作為力量與均衡方向的比較。<br><strong>Z281 CONTROL、Z277 SPEED</strong>｜分別可從控制與速度方向比較。這些是具體型號，選購時請核對規格。</p></details>
+
+
+`;document.querySelector('#guide').before(section);
+</script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+const surveyForm = document.querySelector('#survey-form');
+const connectedForm = surveyForm.cloneNode(true);
+surveyForm.replaceWith(connectedForm);
+connectedForm.querySelector('.note').textContent = '提交後，姓名和所選品牌會儲存至問卷資料庫。';
+const questions = document.createElement('div');
+questions.innerHTML = `<style>.survey select{display:block;margin:10px 0 24px;padding:12px;width:min(100%,400px);font:inherit;border:0;border-radius:4px}</style>
+<label for="experience">你的羽球經驗</label><select id="experience" name="experience" required><option value="">請選擇</option><option>初學</option><option>1–3年</option><option>3年以上</option></select>
+<label for="play-frequency">你多久打一次羽球？</label><select id="play-frequency" name="play_frequency" required><option value="">請選擇</option><option>每週一次以下</option><option>每週2–3次</option><option>每週4次以上</option></select>
+<label for="priority">選購球拍時最重視什麼？</label><select id="priority" name="priority" required><option value="">請選擇</option><option>價格</option><option>操控</option><option>力量</option><option>速度</option><option>其他</option></select>`;
+connectedForm.querySelector('button').before(questions);
+connectedForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const message = connectedForm.querySelector('.message');
+  const button = connectedForm.querySelector('button');
+  const name = connectedForm.querySelector('#visitor-name').value.trim();
+  const brands = [...connectedForm.querySelectorAll('input[name=brand]:checked')].map(input => input.value);
+  if (!name || name.length > 100) { message.textContent = '請輸入 1 至 100 字的姓名。'; return; }
+  if (!brands.length) { message.textContent = '請至少選擇一個選項。'; return; }
+  button.disabled = true;
+  message.textContent = '正在送出…';
+  try {
+    const response = await fetch('https://pxsxuoybgtkoprkmiwur.supabase.co/rest/v1/survey_responses', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': 'sb_publishable_pncUqLFA2tXWJCDICOsXGw_t10CsyFS', 'Authorization': 'Bearer sb_publishable_pncUqLFA2tXWJCDICOsXGw_t10CsyFS', 'Prefer': 'return=minimal' },
+      body: JSON.stringify({ name, brands, experience: connectedForm.elements.experience.value, play_frequency: connectedForm.elements.play_frequency.value, priority: connectedForm.elements.priority.value })
+    });
+    if (!response.ok) throw new Error('Submission failed');
+    connectedForm.reset();
+    message.textContent = '問卷已送出，謝謝你的分享！';
+  } catch (error) {
+    message.textContent = '送出失敗，請檢查網路連線後再試一次。';
+  } finally { button.disabled = false; }
+});
+});
+</script>
+<style>.survey{margin:70px 0;background:#173d30;color:#f5f5df;padding:clamp(24px,5vw,48px)}.survey label,.survey legend{font-weight:700}.survey input[type=text]{display:block;margin:12px 0 24px;padding:14px;border:0;border-radius:4px;width:min(100%,400px);font:inherit}.survey fieldset{border:0;padding:0;margin:0}.survey .choices{display:flex;gap:16px 24px;flex-wrap:wrap;margin:16px 0}.survey .choices label{font-weight:400}.survey button{background:#c4ee6c;color:#173d30;border:0;border-radius:4px}.survey .message{min-height:1.5em}</style><script>
+const survey=document.createElement('section');survey.className='survey';survey.innerHTML=`<span class="eyebrow">YOUR EXPERIENCE / 03</span><h2>分享你的球拍經驗</h2><p>告訴我們你的名字，以及曾經使用過的球拍品牌。</p><form id="survey-form"><label for="visitor-name">姓名</label><input id="visitor-name" name="name" type="text" required autocomplete="name" placeholder="請輸入姓名"><fieldset><legend>你用過哪些品牌的羽球拍？（可複選）</legend><div class="choices"><label><input type="checkbox" name="brand" value="YONEX"> YONEX</label><label><input type="checkbox" name="brand" value="VICTOR"> VICTOR 勝利</label><label><input type="checkbox" name="brand" value="LI-NING"> LI-NING 李寧</label><label><input type="checkbox" name="brand" value="MIZUNO"> MIZUNO</label><label><input type="checkbox" name="brand" value="KIZUNA"> KIZUNA</label><label><input type="checkbox" name="brand" value="其他"> 其他</label><label><input type="checkbox" name="brand" value="尚未使用過"> 尚未使用過</label></div></fieldset><button type="submit">完成問卷</button><p class="message" role="status" aria-live="polite"></p><p class="note" style="color:#cfddce">問卷內容只會顯示在目前頁面，不會傳送或儲存。</p></form>`;document.querySelector('main').append(survey);survey.querySelector('form').addEventListener('submit',e=>{e.preventDefault();const checked=[...survey.querySelectorAll('input[name=brand]:checked')];const message=survey.querySelector('.message');if(!checked.length){message.textContent='請至少選擇一個選項。';return}message.textContent=`謝謝 ${survey.querySelector('#visitor-name').value.trim()}！你的選擇：${checked.map(x=>x.value).join('、')}。`;});
+</script>
